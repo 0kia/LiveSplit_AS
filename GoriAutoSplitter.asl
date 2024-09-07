@@ -1,73 +1,9 @@
-state("GoriCuddlyCarnage-Win64-Shipping", "latest")
-{                                                              //UWorld->UGameInstance(Extension)->EPersistentLevel
-    int LevelID:      "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E8;
-                                                               //UWorld->UGameInstance(Extension)->ASaveState->UGame->CurrentTime
-    float LevelTime:  "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1e0, 0x298, 0x14c;
-                                                               //UWorld->UGameInstance(Extension)->IsInIntro
-    bool IsInIntro:   "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x274;
-                                                               //UWorld->UGameInstance(Extension)->IsInMenu
-    bool IsInMenu:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x273;
-                                                               //UWorld->UGameInstance(Extension)->LoadingScreenWidget->IsEnabled
-    byte IsLoading:   "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x298, 0xE1;
-                                                                   //UWorld->UGameInstance->LocalPlayers->0->PlayerController->ABP_Player_C->Cutscene
-    bool InCutscene:  "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1b8, 0x38, 0x0, 0x30, 0x338, 0x20B0;
-                                                               //UWorld->UGameInstance(UMyGameInstance extension)->ASaveDataController->USaveData_Global->TMap->TimeFloat (in tmap there is new entry every 0x30)
-    float ch1Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x4;
-    float ch2Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x34;
-    float ch3Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x64;
-    float ch4Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x94;
-    float ch5Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0xc4;
-    float ch6Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0xf4;
-    float ch7Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x124;
-    float ch8Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x154;
-                                                               //UWorld->UGameInstance->LocalPlayers->0->PlayerController->ABP_Player_C->CapsuleComponent->Relative Location
-    double LoactionX: "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x128;
-    double LoactionY: "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x130;
-    double LoactionZ: "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x138;
-
-}
-
-state("GoriCuddlyCarnage-Win64-Shipping", "1.0.101")
-{                                                              //UWorld->UGameInstance(Extension)->EPersistentLevel
-    int LevelID:      "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E8;
-                                                               //UWorld->UGameInstance(Extension)->ASaveState->UGame->CurrentTime
-    float LevelTime:  "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1e0, 0x298, 0x14c;
-                                                               //UWorld->UGameInstance(Extension)->IsInIntro
-    bool IsInIntro:   "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x274;
-                                                               //UWorld->UGameInstance(Extension)->IsInMenu
-    bool IsInMenu:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x273;
-                                                               //UWorld->UGameInstance(Extension)->LoadingScreenWidget->IsEnabled
-    byte IsLoading:   "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x298, 0xE1;
-                                                                   //UWorld->UGameInstance->LocalPlayers->0->PlayerController->ABP_Player_C->Cutscene
-    bool InCutscene:  "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1b8, 0x38, 0x0, 0x30, 0x338, 0x20B0;
-                                                               //UWorld->UGameInstance(UMyGameInstance extension)->ASaveDataController->USaveData_Global->TMap->TimeFloat (in tmap there is new entry every 0x30)
-    float ch1Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x4;
-    float ch2Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x34;
-    float ch3Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x64;
-    float ch4Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x94;
-    float ch5Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0xc4;
-    float ch6Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0xf4;
-    float ch7Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x124;
-    float ch8Time:    "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x154;
-                                                               //UWorld->UGameInstance->LocalPlayers->0->PlayerController->ABP_Player_C->CapsuleComponent->Relative Location
-    double LoactionX: "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x128;
-    double LoactionY: "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x130;
-    double LoactionZ: "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x138;
-
-}
-
-init
-{
-    var mms = modules.First().ModuleMemorySize;
-    switch (mms)
-    {
-        case 112939008: version = "1.0.101"; break;
-        default: version = "latest"; break;
-    }
-}
+state("GoriCuddlyCarnage-Win64-Shipping"){}
 
 startup
 {
+    Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Basic");
+        vars.Helper.GameName = "Gori: Cuddly Carnage";
     if (timer.CurrentTimingMethod == TimingMethod.RealTime)
     {
         var timingMessage = MessageBox.Show 
@@ -85,9 +21,8 @@ startup
             timer.CurrentTimingMethod = TimingMethod.GameTime;
     }
 
-    settings.Add("GCC", true, "Gori: Cuddly Carnage");
-    settings.Add("levels", false, "Individual Level Splits", "GCC");
-    settings.Add("Chapters", true, "Chapter Splits", "GCC");
+    settings.Add("levels", false, "Individual Level Splits");
+    settings.Add("Chapters", true, "Chapter Splits");
         settings.Add("ch_01", true, "Chapter 1", "Chapters");
         settings.Add("ch_02", true, "Chapter 2", "Chapters");
         settings.Add("ch_03", true, "Chapter 3", "Chapters");
@@ -95,12 +30,47 @@ startup
         settings.Add("ch_05", true, "Chapter 5", "Chapters");
         settings.Add("ch_06", true, "Chapter 6", "Chapters");
         settings.Add("ch_07", true, "Chapter 7", "Chapters");
-        settings.Add("ch_08", true, "Chapter 8 (END)", "Chapters");
-    settings.Add("reset", true, "Reset", "GCC");
+        settings.Add("ch_08", true, "Chapter 8", "Chapters");
+    settings.Add("reset", true, "Reset");
+}
+
+init
+{
+    var gWorld = vars.Helper.ScanRel(3, "48 8B 05 ???????? 48 3B C? 48 0F 44 C? 48 89 05 ???????? E8");
+    if (gWorld == IntPtr.Zero)
+        throw new InvalidOperationException("GWorld not yet found.");
+
+    vars.Helper["LevelID"] = vars.Helper.Make<int>(gWorld, 0x1B8, 0x1E8);
+    vars.Helper["LevelTime"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1e0, 0x298, 0x14c);
+    vars.Helper["IsInIntro"] = vars.Helper.Make<bool>(gWorld, 0x1B8, 0x274);
+    vars.Helper["IsInMenu"] = vars.Helper.Make<bool>(gWorld, 0x1B8, 0x273);
+    vars.Helper["IsLoading"] = vars.Helper.Make<byte>(gWorld, 0x1B8, 0x298, 0xE1);
+    vars.Helper["InCutscene"] = vars.Helper.Make<bool>(gWorld, 0x1b8, 0x38, 0x0, 0x30, 0x338, 0x20B0);
+
+    vars.Helper["ch1Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x4);
+    vars.Helper["ch2Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x34);
+    vars.Helper["ch3Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x64);
+    vars.Helper["ch4Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x94);
+    vars.Helper["ch5Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0xc4);
+    vars.Helper["ch6Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0xf4);
+    vars.Helper["ch7Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x124);
+    vars.Helper["ch8Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x154);
+
+    vars.Helper["LoactionX"] = vars.Helper.Make<double>(gWorld, 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x128);
+    vars.Helper["LoactionY"] = vars.Helper.Make<double>(gWorld, 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x130);
+    vars.Helper["LoactionZ"] = vars.Helper.Make<double>(gWorld, 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x138);
+
+
+}
+
+update{
+    vars.Helper.Update();
+    vars.Helper.MapPointers();
 }
 
 start
 {
+    print(current.IsLoading.ToString());
     if(settings["levels"])
     {
         //set timer to negative value
@@ -133,12 +103,11 @@ split
         return true;
     };
 
-
 }
 
 gameTime{
-    //if levels splits are enabled, then onl use the LevelTime
-    return TimeSpan.FromSeconds(current.LevelTime) && settings["levels"];
+    if(settings["levels"])
+        return TimeSpan.FromSeconds(current.LevelTime);
 }
 
 isLoading
