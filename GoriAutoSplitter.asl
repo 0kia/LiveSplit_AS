@@ -118,8 +118,6 @@ split
     return (old.ch5Time != current.ch5Time && settings["ch_01"]);
     return (old.ch6Time != current.ch6Time && settings["ch_01"]);
     return (old.ch7Time != current.ch7Time && settings["ch_01"]);
-    //this split will only apply in individual levels splits
-    return (old.ch8Time != current.ch8Time && settings["ch_08"]);
 
     //final split dumb dumb split, make better please somehow
     if  (current.ch8Time == 0 && 
