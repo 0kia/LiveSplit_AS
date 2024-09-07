@@ -1,6 +1,8 @@
 state("GoriCuddlyCarnage-Win64-Shipping", "latest")
 {                                                              //UWorld->UGameInstance(Extension)->EPersistentLevel
     int LevelID:      "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1E8;
+                                                               //UWorld->UGameInstance(Extension)->ASaveState->UGame->CurrentTime
+    float LevelTime:  "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x1e0, 0x298, 0x14c;
                                                                //UWorld->UGameInstance(Extension)->IsInIntro
     bool IsInIntro:   "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F7F8, 0x1B8, 0x274;
                                                                //UWorld->UGameInstance(Extension)->IsInMenu
@@ -28,6 +30,8 @@ state("GoriCuddlyCarnage-Win64-Shipping", "latest")
 state("GoriCuddlyCarnage-Win64-Shipping", "1.0.101")
 {                                                              //UWorld->UGameInstance(Extension)->EPersistentLevel
     int LevelID:      "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1E8;
+                                                               //UWorld->UGameInstance(Extension)->ASaveState->UGame->CurrentTime
+    float LevelTime:  "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x1e0, 0x298, 0x14c;
                                                                //UWorld->UGameInstance(Extension)->IsInIntro
     bool IsInIntro:   "GoriCuddlyCarnage-Win64-Shipping.exe", 0x656F6F8, 0x1B8, 0x274;
                                                                //UWorld->UGameInstance(Extension)->IsInMenu
@@ -60,15 +64,6 @@ init
         case 112939008: version = "1.0.101"; break;
         default: version = "latest"; break;
     }
-    //prevent any double splits
-    vars.ch1 = 0;
-    vars.ch2 = 0;
-    vars.ch3 = 0;
-    vars.ch4 = 0;
-    vars.ch5 = 0;
-    vars.ch6 = 0;
-    vars.ch7 = 0;
-    vars.ch8 = 0;
 }
 
 startup
@@ -91,6 +86,7 @@ startup
     }
 
     settings.Add("GCC", true, "Gori: Cuddly Carnage");
+    settings.Add("levels", false, "Individual Level Splits", "GCC");
     settings.Add("Chapters", true, "Chapter Splits", "GCC");
         settings.Add("ch_01", true, "Chapter 1", "Chapters");
         settings.Add("ch_02", true, "Chapter 2", "Chapters");
@@ -101,63 +97,33 @@ startup
         settings.Add("ch_07", true, "Chapter 7", "Chapters");
         settings.Add("ch_08", true, "Chapter 8 (END)", "Chapters");
     settings.Add("reset", true, "Reset", "GCC");
-
-    settings.Add("levels", false, "Level Splits", "GCC");
-        settings.Add("chs_01", false, "Chapter 1", "levels");
-        settings.Add("chs_02", false, "Chapter 2", "levels");
-        settings.Add("chs_03", false, "Chapter 3", "levels");
-        settings.Add("chs_04", false, "Chapter 4", "levels");
-        settings.Add("chs_05", false, "Chapter 5", "levels");
-        settings.Add("chs_06", false, "Chapter 6", "levels");
-        settings.Add("chs_07", false, "Chapter 7", "levels");
-        settings.Add("chs_08", false, "Chapter 8 (END)", "levels");
 }
 
 start
 {
-    return (current.IsInIntro == false && current.IsLoading < 32 && old.IsLoading > 32 && current.LevelID == 3);
+    if(settings["levels"])
+    {
+        //set timer to negative value
+        return (current.LevelID != 1 && current.IsLoading < 32 && old.IsLoading >= 32);
+    }
+    return (current.IsInIntro == false && current.ch1Time < 1 && current.IsLoading < 32 && old.IsLoading >= 32 && current.LevelID == 3);
 }
 
 split
 {
-    print(current.LevelID.ToString());
-    if (current.ch1Time != 0 && settings["ch_01"] && vars.ch1 == 0){
-        vars.ch1 = 1;
-        return true;
-    }
-
-    if (current.ch2Time != 0 && settings["ch_02"] && vars.ch2 == 0){
-        vars.ch2 = 1;
-        return true;
-    }
-
-    if (current.ch3Time != 0 && settings["ch_03"] && vars.ch3 == 0){
-        vars.ch3 = 1;
-        return true;
-    }
-
-    if (current.ch4Time != 0 && settings["ch_04"] && vars.ch4 == 0){
-        vars.ch4 = 1;
-        return true;
-    }
-
-    if (current.ch5Time != 0 && settings["ch_05"] && vars.ch5 == 0){
-        vars.ch5 = 1;
-        return true;
-    }
-
-    if (current.ch6Time != 0 && settings["ch_06"] && vars.ch6 == 0){
-        vars.ch6 = 1;
-        return true;
-    }
-
-    if (current.ch7Time != 0 && settings["ch_07"] && vars.ch7 == 0){
-        vars.ch7 = 1;
-        return true;
-    }
+    return (old.ch1Time != current.ch1Time && settings["ch_01"]);
+    return (old.ch2Time != current.ch2Time && settings["ch_01"]);
+    return (old.ch3Time != current.ch3Time && settings["ch_01"]);
+    return (old.ch4Time != current.ch4Time && settings["ch_01"]);
+    return (old.ch5Time != current.ch5Time && settings["ch_01"]);
+    return (old.ch6Time != current.ch6Time && settings["ch_01"]);
+    return (old.ch7Time != current.ch7Time && settings["ch_01"]);
+    //this split will only apply in individual levels splits
+    return (old.ch8Time != current.ch8Time && settings["ch_08"]);
 
     //final split dumb dumb split, make better please somehow
-    if ((current.InCutscene) && 
+    if  (current.ch8Time == 0 && 
+        (current.InCutscene) && 
         (current.LevelID == 10) && 
         (settings["ch_08"]) &&
         (vars.ch8 == 0) &&
@@ -169,28 +135,23 @@ split
         return true;
     };
 
+
+}
+
+gameTime{
+    //if levels splits are enabled, then onl use the LevelTime
+    return TimeSpan.FromSeconds(current.LevelTime) && settings["levels"];
 }
 
 isLoading
 {
-    return (current.IsLoading > 32);
-}
-
-onReset
-{
-    vars.ch1 = 0;
-    vars.ch2 = 0;
-    vars.ch3 = 0;
-    vars.ch4 = 0;
-    vars.ch5 = 0;
-    vars.ch6 = 0;
-    vars.ch7 = 0;
-    vars.ch8 = 0;
+    //set is loading all the time if levels is enabled, otherwise do normal load removal
+    return(current.IsLoading >= 32) || settings["levels"];
 }
 
 reset
 {
-    return current.IsInMenu && settings["reset"];
+    return (current.IsLoading >= 32 && settings["levels"]) || (current.IsInMenu && settings["reset"]);
 }
 
 exit
