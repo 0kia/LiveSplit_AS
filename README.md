@@ -2,4 +2,4 @@
 *A collection of Auto Splitters by myself*
 
 ### Releases
-* **[filler](https://github.com/0kia/LiveSplit_AS/releases)**
+* **[Gori: Cuddly Carnage](https://raw.githubusercontent.com/0kia/LiveSplit_AS/main/GoriAutoSplitter.asl)**
