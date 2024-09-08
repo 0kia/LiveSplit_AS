@@ -70,7 +70,6 @@ update{
 
 start
 {
-    print(current.IsLoading.ToString());
     if(settings["levels"])
     {
         //set timer to negative value
