@@ -21,7 +21,7 @@ startup
             timer.CurrentTimingMethod = TimingMethod.GameTime;
     }
 
-    settings.Add("levels", false, "Individual Level Splits");
+    settings.Add("levels", false, "Individual Level Timer");
     settings.Add("Chapters", true, "Chapter Splits");
         settings.Add("ch_01", true, "Chapter 1", "Chapters");
         settings.Add("ch_02", true, "Chapter 2", "Chapters");
