@@ -100,7 +100,6 @@ split
         (current.InCutscene) && 
         (current.LevelID == 10) && 
         (settings["ch_08"]) &&
-        (vars.ch8 == 0) &&
         (current.LoactionX > 11000 && current.LoactionX < 300000) && 
         (current.LoactionY > -11000 && current.LoactionY < -5000) && 
         (current.LoactionZ > 2000 && current.LoactionZ < 6000))
@@ -119,7 +118,7 @@ gameTime{
 isLoading
 {
     //set is loading all the time if levels is enabled, otherwise do normal load removal
-    return(current.IsLoading >= 32) || settings["levels"];
+    return (current.IsLoading >= 32) || settings["levels"];
 }
 
 reset
