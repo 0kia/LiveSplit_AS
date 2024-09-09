@@ -75,7 +75,7 @@ start
         //set timer to negative value
         return (current.LevelID != 1 && current.IsLoading < 32 && old.IsLoading >= 32);
     }
-    return (current.IsInIntro == false && current.ch1Time < 1 && current.IsLoading < 32 && old.IsLoading >= 32 && current.LevelID == 3);
+    return (current.LevelTime != 0 && current.ch1Time < 1 && current.LevelID == 3);
 }
 
 split
