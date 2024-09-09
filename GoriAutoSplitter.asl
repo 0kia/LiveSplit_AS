@@ -56,9 +56,9 @@ init
     vars.Helper["ch7Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x124);
     vars.Helper["ch8Time"] = vars.Helper.Make<float>(gWorld, 0x1B8, 0x1E0, 0x2A0, 0xE0, 0x154);
 
-    vars.Helper["LoactionX"] = vars.Helper.Make<double>(gWorld, 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x128);
-    vars.Helper["LoactionY"] = vars.Helper.Make<double>(gWorld, 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x130);
-    vars.Helper["LoactionZ"] = vars.Helper.Make<double>(gWorld, 0x656F7F8, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x138);
+    vars.Helper["LoactionX"] = vars.Helper.Make<double>(gWorld, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x128);
+    vars.Helper["LoactionY"] = vars.Helper.Make<double>(gWorld, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x130);
+    vars.Helper["LoactionZ"] = vars.Helper.Make<double>(gWorld, 0x1b8, 0x38, 0x0 , 0x30, 0x338, 0x328, 0x138);
 
 
 }
@@ -103,10 +103,7 @@ split
         (current.LoactionX > 11000 && current.LoactionX < 300000) && 
         (current.LoactionY > -11000 && current.LoactionY < -5000) && 
         (current.LoactionZ > 2000 && current.LoactionZ < 6000))
-    {
-        vars.ch8 = 1;
-        return true;
-    };
+            return true;
 
 }
 
