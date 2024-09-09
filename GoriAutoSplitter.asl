@@ -129,5 +129,5 @@ reset
 
 exit
 {
-    vars.timerModel.Reset();
+    timer.IsGameTimePaused = true;
 }
