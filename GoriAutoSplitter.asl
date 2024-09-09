@@ -80,13 +80,20 @@ start
 
 split
 {
-    return (old.ch1Time != current.ch1Time && settings["ch_01"]);
-    return (old.ch2Time != current.ch2Time && settings["ch_01"]);
-    return (old.ch3Time != current.ch3Time && settings["ch_01"]);
-    return (old.ch4Time != current.ch4Time && settings["ch_01"]);
-    return (old.ch5Time != current.ch5Time && settings["ch_01"]);
-    return (old.ch6Time != current.ch6Time && settings["ch_01"]);
-    return (old.ch7Time != current.ch7Time && settings["ch_01"]);
+    if (old.ch1Time != current.ch1Time && settings["ch_01"])
+        return true;
+    if (old.ch2Time != current.ch2Time && settings["ch_02"])
+        return true;
+    if (old.ch3Time != current.ch3Time && settings["ch_03"])
+        return true;
+    if (old.ch4Time != current.ch4Time && settings["ch_04"])
+        return true;
+    if (old.ch5Time != current.ch5Time && settings["ch_05"])
+        return true;
+    if (old.ch6Time != current.ch6Time && settings["ch_06"])
+        return true;
+    if (old.ch7Time != current.ch7Time && settings["ch_07"])
+        return true;
 
     //final split dumb dumb split, make better please somehow
     if  (current.ch8Time == 0 && 
