@@ -31,7 +31,7 @@ startup
         settings.Add("ch_06", true, "Chapter 6", "Chapters");
         settings.Add("ch_07", true, "Chapter 7", "Chapters");
         settings.Add("ch_08", true, "Chapter 8", "Chapters");
-    settings.Add("reset", true, "Reset");
+
 }
 
 init
@@ -72,7 +72,6 @@ start
 {
     if(settings["levels"])
     {
-        //set timer to negative value
         return (current.LevelID != 1 && current.IsLoading < 32 && old.IsLoading >= 32);
     }
     return (current.LevelTime != 0 && current.ch1Time < 1 && current.LevelID == 3);
@@ -120,7 +119,7 @@ isLoading
 
 reset
 {
-    return (current.IsLoading >= 32 && settings["levels"]) || (current.IsInMenu && settings["reset"]);
+    return (current.IsLoading >= 32 && settings["levels"]) || (current.IsInMenu);
 }
 
 exit
