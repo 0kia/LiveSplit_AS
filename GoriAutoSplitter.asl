@@ -119,7 +119,7 @@ isLoading
 
 reset
 {
-    return (current.IsLoading >= 32 && settings["levels"]) || (current.IsInMenu);
+    return (current.LevelTime < 0.006061  && settings["levels"]) || (current.IsInMenu);
 }
 
 exit
