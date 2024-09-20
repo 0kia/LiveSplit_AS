@@ -31,7 +31,7 @@ startup
         settings.Add("ch_06", true, "Chapter 6", "Chapters");
         settings.Add("ch_07", true, "Chapter 7", "Chapters");
         settings.Add("ch_08", true, "Chapter 8", "Chapters");
-
+    settings.Add("reset", false, "Reset");
 }
 
 init
@@ -79,19 +79,21 @@ start
 
 split
 {
-    if (old.ch1Time != current.ch1Time && settings["ch_01"])
+    print(current.LevelID.ToString());
+    print(current.IsInMenu.ToString());
+    if (old.ch1Time != current.ch1Time && settings["ch_01"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
-    if (old.ch2Time != current.ch2Time && settings["ch_02"])
+    if (old.ch2Time != current.ch2Time && settings["ch_02"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
-    if (old.ch3Time != current.ch3Time && settings["ch_03"])
+    if (old.ch3Time != current.ch3Time && settings["ch_03"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
-    if (old.ch4Time != current.ch4Time && settings["ch_04"])
+    if (old.ch4Time != current.ch4Time && settings["ch_04"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
-    if (old.ch5Time != current.ch5Time && settings["ch_05"])
+    if (old.ch5Time != current.ch5Time && settings["ch_05"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
-    if (old.ch6Time != current.ch6Time && settings["ch_06"])
+    if (old.ch6Time != current.ch6Time && settings["ch_06"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
-    if (old.ch7Time != current.ch7Time && settings["ch_07"])
+    if (old.ch7Time != current.ch7Time && settings["ch_07"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
 
     //final split dumb dumb split, make better please somehow
@@ -114,12 +116,12 @@ gameTime{
 isLoading
 {
     //set is loading all the time if levels is enabled, otherwise do normal load removal
-    return (current.IsLoading >= 32) || settings["levels"];
+    return (current.IsLoading >= 32) || settings["levels"] || current.LevelID == 0 || current.IsInMenu;
 }
 
 reset
 {
-    return (current.LevelTime < 0.006061  && settings["levels"]) || (current.IsInMenu);
+    return (current.LevelTime < 0.006061  && settings["levels"]) || (current.IsInMenu && settings["reset"]);
 }
 
 exit
