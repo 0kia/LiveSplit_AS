@@ -79,8 +79,6 @@ start
 
 split
 {
-    print(current.LevelID.ToString());
-    print(current.IsInMenu.ToString());
     if (old.ch1Time != current.ch1Time && settings["ch_01"] && current.LevelID != 26 && current.LevelID != 0)
         return true;
     if (old.ch2Time != current.ch2Time && settings["ch_02"] && current.LevelID != 26 && current.LevelID != 0)
