@@ -31,7 +31,7 @@ startup
         settings.Add("ch_06", true, "Chapter 6", "Chapters");
         settings.Add("ch_07", true, "Chapter 7", "Chapters");
         settings.Add("ch_08", true, "Chapter 8", "Chapters");
-    settings.Add("reset", false, "Reset");
+    settings.Add("reset", false, "Auto-Reset on Main Menu");
 }
 
 init
